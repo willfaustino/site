@@ -12,6 +12,16 @@
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Builds.json", {onProgress: UnityProgress});
     </script>
+    <style type="text/css">
+      #warning-message { display: none; }
+      @media only screen and (orientation:portrait){
+          #webgl-content { display:none; }
+          #warning-message { display:block; }
+      }
+      @media only screen and (orientation:landscape){
+          #warning-message { display:none; }
+      }
+    </style>
   </head>
   <body>
     <div class="webgl-content">
@@ -19,6 +29,9 @@
       <div class="footer">
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)" style="width: 100px; height: 100px"></div>
       </div>
+    </div>
+    <div id="warning-message">
+      this website is only viewable in landscape mode
     </div>
   </body>
 </html>

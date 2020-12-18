@@ -13,11 +13,14 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Builds.json", {onProgress: UnityProgress});
     </script>
     <style type="text/css">
-      @media screen and (orientation:portrait){
+      @media only screen and (orientation:portrait){
           #unityContainer { width: 100%; height: auto; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
       }
-      @media screen and (orientation:landscape){
+      @media only screen and (orientation:landscape){
           #unityContainer { width: auto; height: 100%; position: absolute; }
+      }
+      @media only screen and (min-width: 992px){
+        #unityContainer { width: 100%; height: auto; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
       }
     </style>
   </head>
